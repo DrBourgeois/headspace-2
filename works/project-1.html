@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 1 – Your Name</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white font-mono">
+  <!-- nav -->
+  <nav class="p-6 flex gap-6 text-sm uppercase">
+    <a href="../index.html" class="hover:underline">Home</a>
+    <a href="../works.html" class="hover:underline">Works</a>
+    <a href="../about.html" class="hover:underline">About</a>
+    <a href="../blog.html" class="hover:underline">Blog</a>
+  </nav>
+
+  <!-- project content -->
+  <section class="p-12 max-w-3xl mx-auto">
+    <!-- Title + Meta -->
+    <h1 class="text-4xl mb-2">Project Title</h1>
+    <p class="text-sm text-neutral-400 mb-8">2025 — installation / mixed media</p>
+
+    <!-- Main Image -->
+    <img src="../images/work1.jpg" alt="Project Image" class="rounded-lg mb-8">
+
+    <!-- Description -->
+    <p class="mb-6">
+      This is a description of the project. Write about your concept, process, or exhibition context.
+      Keep it simple, minimal, and formatted in paragraphs for readability.
+    </p>
+    <p class="mb-6">
+      You can also <a href="https://external-link.com" class="underline">link to external resources</a>
+      if the work is documented elsewhere.
+    </p>
+
+    <!-- Embedded Video Example -->
+    <div class="mb-8">
+      <h2 class="text-2xl mb-4">Video Documentation</h2>
+      <div class="aspect-w-16 aspect-h-9">
+        <iframe 
+          src="https://www.youtube.com/embed/VIDEO_ID" 
+          title="YouTube video player"
+          class="w-full h-96 rounded-lg"
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <!-- More Images -->
+    <div class="grid md:grid-cols-2 gap-6 mb-12">
+      <img src="../images/work1-detail1.jpg" class="rounded-lg">
+      <img src="../images/work1-detail2.jpg" class="rounded-lg">
+    </div>
+
+    <!-- Navigation back -->
+    <a href="../works.html" class="underline text-neutral-400 hover:text-white">← Back to Works</a>
+  </section>
+</body>
+</html>
