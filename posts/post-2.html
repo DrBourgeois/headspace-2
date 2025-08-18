@@ -3,79 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog Post – Placeholder</title>
+  <title>Blog – The Edges of Memory</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-white text-gray-900 font-sans">
+<body class="bg-black text-white font-mono tracking-tight">
 
-  <!-- Navigation -->
-  <nav class="flex justify-center space-x-6 py-6 border-b border-gray-200">
-    <a href="index.html" class="hover:text-gray-600">Home</a>
-    <a href="works.html" class="hover:text-gray-600">Works</a>
-    <a href="blog.html" class="hover:text-gray-600">Blog</a>
-    <a href="about.html" class="hover:text-gray-600">About</a>
-  </nav>
+  <!-- Header / Nav -->
+  <header class="p-4 border-b border-fuchsia-500 flex justify-between items-center">
+    <h1 class="text-xl font-bold uppercase">[ pepe.blog ]</h1>
+    <nav class="space-x-6 text-sm">
+      <a href="index.html" class="hover:text-fuchsia-400">Home</a>
+      <a href="works.html" class="hover:text-fuchsia-400">Works</a>
+      <a href="blog.html" class="hover:text-fuchsia-400">Blog</a>
+      <a href="about.html" class="hover:text-fuchsia-400">About</a>
+    </nav>
+  </header>
 
   <!-- Blog post -->
   <main class="max-w-3xl mx-auto px-6 py-12">
     <article>
-      <!-- Post header -->
-      <header class="mb-10">
-        <h1 class="text-4xl font-bold mb-2">The Edges of Memory</h1>
-        <p class="text-sm text-gray-500">August 18, 2025 · by Pepe</p>
-      </header>
+      <!-- Title -->
+      <h2 class="text-4xl md:text-5xl font-bold mb-2 text-fuchsia-400">The Edges of Memory</h2>
+      <p class="text-sm text-gray-400 mb-10">Aug 18, 2025 — draft notes, unfinished, but alive</p>
 
-      <!-- Post content -->
-      <section class="prose prose-lg max-w-none">
+      <!-- Content -->
+      <div class="space-y-6 leading-relaxed text-lg">
         <p>
-          Today I found myself staring at the reflection of my screen on a café window.  
-          It was both inside and outside, a doubled presence—like the way art lives in my head 
-          before it ever takes form. I thought: maybe websites are the same. A window, 
-          a repetition, a place where nothing and everything gathers.
+          Today I stared at the reflection of my laptop screen on a café window.  
+          Two worlds overlapped — inside and outside — like how art exists in memory  
+          before it ever takes shape. Maybe this site is also a window. A repetition.  
+          A sketch.
         </p>
 
         <p>
-          I’m building this small corner of the internet as a sketchbook,  
-          a vessel for unfinished thoughts, images I don’t know how to frame,  
-          and sounds that dissolve into silence once played.
+          I want this blog to hold fragments: unfinished ideas, cables scattered on the floor,  
+          sounds that collapse into silence once played. Less blog, more glitch diary.
         </p>
 
-        <blockquote class="border-l-4 border-gray-300 pl-4 italic text-gray-700">
+        <blockquote class="border-l-4 border-fuchsia-500 pl-4 italic text-gray-300">
           “A blog is an archive of hesitations.”
         </blockquote>
 
         <p>
-          For now, this is only a placeholder. But I want it to feel like sitting with me  
-          at the studio table, coffee stains on the paper, cables scattered across the floor,  
-          fragments of ideas becoming something slowly.
+          This is only a placeholder. But maybe placeholders are the most honest state.  
+          Things mid-way, not yet solidified, not yet corrupted by polish.
         </p>
+      </div>
 
-        <!-- Example image -->
-        <figure class="my-8">
-          <img src="images/blog-placeholder.jpg" alt="Notebook with sketches" class="rounded-xl shadow-md mx-auto">
-          <figcaption class="text-center text-sm text-gray-500 mt-2">
-            A page from the notebook I keep near my bed.
-          </figcaption>
-        </figure>
+      <!-- Image -->
+      <figure class="my-10">
+        <img src="images/blog-placeholder.jpg" alt="Notebook with sketches" class="rounded-lg shadow-lg mx-auto">
+        <figcaption class="text-center text-sm text-gray-500 mt-2">A notebook fragment from last week.</figcaption>
+      </figure>
 
-        <!-- Example video embed -->
-        <div class="my-10 flex justify-center">
-          <iframe 
-            class="w-full max-w-2xl aspect-video rounded-xl shadow-md"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-            title="YouTube video player"
-            frameborder="0" 
-            allowfullscreen>
-          </iframe>
-        </div>
+      <!-- Video -->
+      <div class="my-12">
+        <iframe 
+          class="w-full aspect-video rounded-lg shadow-lg"
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+          title="Video"
+          frameborder="0"
+          allowfullscreen>
+        </iframe>
+      </div>
 
-        <p>
-          Until next time,  
-          <br>
-          – Pepe
-        </p>
-      </section>
+      <p class="mt-12 text-gray-400 text-sm">Until next time,<br>– pepe</p>
     </article>
   </main>
+
 </body>
 </html>
