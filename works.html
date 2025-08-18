@@ -3,16 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pepe Bloom</title>
+  <title>Works - Your Name</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-
 <body class="bg-black text-white font-mono">
+  <!-- nav -->
   <nav class="p-6 flex gap-6 text-sm uppercase">
-  <a href="index.html" class="hover:underline">Home</a>
-  <a href="works.html" class="hover:underline">Works</a>
-  <a href="about.html" class="hover:underline">About</a>
-</nav>
+    <a href="index.html" class="hover:underline">Home</a>
+    <a href="works.html" class="hover:underline">Works</a>
+    <a href="about.html" class="hover:underline">About</a>
+    <a href="blog.html" class="hover:underline">Blog</a>
+  </nav>
 
+  <section class="p-12">
+    <h1 class="text-4xl mb-8">Works</h1>
+    <div class="grid md:grid-cols-2 gap-10">
+      <div class="bg-neutral-900 p-6 rounded-xl shadow-xl">
+        <img src="images/work1.jpg" alt="Work 1" class="rounded-lg mb-4">
+        <h2 class="text-2xl">Project Title 1</h2>
+        <p class="text-sm mt-2 text-neutral-400">Short description of the project. Medium, year.</p>
+      </div>
+      <div class="bg-neutral-900 p-6 rounded-xl shadow-xl">
+        <img src="images/work2.jpg" alt="Work 2" class="rounded-lg mb-4">
+        <h2 class="text-2xl">Project Title 2</h2>
+        <p class="text-sm mt-2 text-neutral-400">Short description of the project. Medium, year.</p>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
