@@ -6,23 +6,27 @@
   <title>Blog Post – Placeholder</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-white text-gray-900 font-sans">
+
   <!-- Navigation -->
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="works.html">Works</a>
-    <a href="blog.html">Blog</a>
-    <a href="about.html">About</a>
+  <nav class="flex justify-center space-x-6 py-6 border-b border-gray-200">
+    <a href="index.html" class="hover:text-gray-600">Home</a>
+    <a href="works.html" class="hover:text-gray-600">Works</a>
+    <a href="blog.html" class="hover:text-gray-600">Blog</a>
+    <a href="about.html" class="hover:text-gray-600">About</a>
   </nav>
 
-  <main class="blog-post">
+  <!-- Blog post -->
+  <main class="max-w-3xl mx-auto px-6 py-12">
     <article>
-      <header>
-        <h1>The Edges of Memory</h1>
-        <p class="post-meta">August 18, 2025 · by Pepe</p>
+      <!-- Post header -->
+      <header class="mb-10">
+        <h1 class="text-4xl font-bold mb-2">The Edges of Memory</h1>
+        <p class="text-sm text-gray-500">August 18, 2025 · by Pepe</p>
       </header>
 
-      <section class="post-content">
+      <!-- Post content -->
+      <section class="prose prose-lg max-w-none">
         <p>
           Today I found myself staring at the reflection of my screen on a café window.  
           It was both inside and outside, a doubled presence—like the way art lives in my head 
@@ -36,5 +40,42 @@
           and sounds that dissolve into silence once played.
         </p>
 
-        <blockquote>
-          “A blog is an archive of hesitations.”  
+        <blockquote class="border-l-4 border-gray-300 pl-4 italic text-gray-700">
+          “A blog is an archive of hesitations.”
+        </blockquote>
+
+        <p>
+          For now, this is only a placeholder. But I want it to feel like sitting with me  
+          at the studio table, coffee stains on the paper, cables scattered across the floor,  
+          fragments of ideas becoming something slowly.
+        </p>
+
+        <!-- Example image -->
+        <figure class="my-8">
+          <img src="images/blog-placeholder.jpg" alt="Notebook with sketches" class="rounded-xl shadow-md mx-auto">
+          <figcaption class="text-center text-sm text-gray-500 mt-2">
+            A page from the notebook I keep near my bed.
+          </figcaption>
+        </figure>
+
+        <!-- Example video embed -->
+        <div class="my-10 flex justify-center">
+          <iframe 
+            class="w-full max-w-2xl aspect-video rounded-xl shadow-md"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+            title="YouTube video player"
+            frameborder="0" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <p>
+          Until next time,  
+          <br>
+          – Pepe
+        </p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>
