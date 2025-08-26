@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 2 - Your Name</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white font-mono">
+  <!-- nav -->
+  <nav class="p-6 flex gap-6 text-sm uppercase">
+    <a href="../index.html" class="hover:underline">Home</a>
+    <a href="../works.html" class="hover:underline">Works</a>
+    <a href="../about.html" class="hover:underline">About</a>
+    <a href="../blog.html" class="hover:underline">Blog</a>
+  </nav>
+
+  <!-- project content -->
+  <section class="p-12 max-w-4xl mx-auto">
+    <h1 class="text-4xl mb-4">Project Title 2</h1>
+    <p class="text-neutral-400 mb-8">Installation • 2024 • Mixed media, video, and code</p>
+
+    <!-- description -->
+    <article class="space-y-6 leading-relaxed">
+      <p>
+        This project explores the intersection of <span class="text-pink-400">network protocols</span>, 
+        surveillance, and speculative media. It was exhibited in Berlin in 2024 as part of 
+        an experimental art and technology showcase. 
+      </p>
+      <p>
+        The installation involved custom hardware and a 
+        <span class="text-green-400">mesh networking system</span> that 
+        created its own hidden internet inside the gallery. Visitors could connect 
+        and interact anonymously, but the system simultaneously monitored and 
+        distorted communication — raising questions about visibility, control, 
+        and resistance within digital infrastructures.
+      </p>
+    </article>
+
+    <!-- images (auto-expandable gallery) -->
+    <div id="gallery" class="grid md:grid-cols-2 gap-6 mt-10">
+      <img src="../images/CLOSEUP-11-.jpg" alt="Project detail 1" class="rounded-lg shadow-lg">
+      <img src="../images/CLOSEUP-13-.jpg" alt="Project detail 2" class="rounded-lg shadow-lg">
+      <!-- add more images here -->
+    </div>
+  </section>
+
+  <!-- lightbox overlay -->
+  <div id="lbOverlay" class="fixed inset-0 hidden items-center justify-center bg-black/80 z-50 p-4">
+    <!-- arrows -->
+    <button id="lbPrev" class="absolute left-4 text-white/80 text-4xl select-none">&lsaquo;</button>
+    <img id="lbImg" alt="" class="max-h-[90vh] max-w-[90vw] rounded-lg shadow-2xl mx-auto">
+    <button id="lbNext" class="absolute right-4 text-white/80 text-4xl select-none">&rsaquo;</button>
+    <!-- close button -->
+    <button id="lbClose" class="absolute top-4 right-4 text-white/80 text-3xl leading-none" aria-label="Close">&times;</button>
+  </div>
+
+  <!-- script -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const overlay  = document.getElementById('lbOverlay');
+    const imgEl    = document.getElementById('lbImg');
+    const closeBtn = document.getElementById('lbClose');
+    const prevBtn  = document.getElementById('lbPrev');
+    const nextBtn  = document.getElementById('lbNext');
+
+    const images = Array.from(document.querySelectorAll('#gallery img'));
+    let currentIndex = -1;
+
+    // Make all images expandable
+    images.forEach(img => img.classList.add('expandable', 'cursor-zoom-in'));
+
+    function showImage(index) {
+      if (index < 0) index = images.length - 1;
+      if (index >= images.length) index = 0;
+      currentIndex = index;
+      const src = images[index].dataset.fullsrc || images[index].src;
+      imgEl.src = src;
+      imgEl.alt = images[index].alt || '';
+      overlay.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeLightbox() {
+      overlay.classList.add('hidden');
+      imgEl.src = '';
+      document.body.classList.remove('overflow-hidden');
+      currentIndex = -1;
+    }
+
+    // Open on image click
+    images.forEach((img, idx) => {
+      img.addEventListener('click', () => showImage(idx));
+    });
+
+    // Close, next, prev
+    closeBtn.addEventListener('click', closeLightbox);
+    prevBtn.addEventListener('click', () => showImage(currentIndex - 1));
+    nextBtn.addEventListener('click', () => showImage(currentIndex + 1));
+
+    // Close if clicking backdrop (but not the image itself)
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeLightbox();
+    });
+
+    // Keyboard controls
+    document.addEventListener('keydown', (e) => {
+      if (overlay.classList.contains('hidden')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+      if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+    });
+  });
+  </script>
+</body>
+</html>

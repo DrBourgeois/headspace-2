@@ -1,33 +1,160 @@
-<!DOCTYPE html>
+<!doctype html>
+<!--
+ ░▒▓███████▓▒░▒▓█▓▒░      ░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░      ░▒▓███████▓▒░ ░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓███████▓▒░  
+░▒▓█▓▒░      ░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ 
+░▒▓█▓▒░      ░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ 
+ ░▒▓██████▓▒░░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ 
+       ░▒▓█▓▒░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ 
+       ░▒▓█▓▒░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ 
+░▒▓███████▓▒░░▒▓████████▓▒░▒▓██████▓▒░ ░▒▓█████████████▓▒░       ░▒▓███████▓▒░ ░▒▓██████▓▒░ ░▒▓█████████████▓▒░░▒▓█▓▒░░▒▓█▓▒░ 
+                                                                                                                              
+                                                                                                                              -->
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pepe Bloom</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pepe Sen - Müge Pelin Sen Personal Portfolio Website</title>
 
-<body class="bg-black text-white font-mono">
-  <nav class="p-6 flex gap-6 text-sm uppercase">
-    <a href="index.html" class="hover:underline">Home</a>
-    <a href="works.html" class="hover:underline">Works</a>
-    <a href="about.html" class="hover:underline">About</a>
-    <a href="blog.html" class="hover:underline">Blog</a>
-  </nav>
-  <section class="min-h-screen flex flex-col justify-center items-center">
-    <h1 class="text-6xl tracking-tight">Pepe Bloom</h1>
-    <p class="mt-4 text-lg italic text-center max-w-xs mx-auto">digital media / photography / installations</p>
-  </section>
-  <section class="p-10 grid gap-8">
-    <h2 class="text-2xl">Works</h2>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-neutral-900 p-4 rounded-xl shadow-xl">Project 1</div>
-      <div class="bg-neutral-900 p-4 rounded-xl shadow-xl">Project 2</div>
-      <div class="bg-neutral-900 p-4 rounded-xl shadow-xl">Project 3</div>
-    </div>
-  </section>
-  <footer class="p-6 text-center text-xs text-neutral-500">
-    © 2025 Pepe Bloom
-  </footer>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --font-size: 8px; 
+    }
+
+    body {
+      margin: 0;
+      font-family: "Press Start 2P", monospace;
+      background: #000;
+      color: #fff;
+    }
+
+    
+    #grid-container {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    #grid-bg {
+      position: absolute;
+      inset: 0;
+      mix-blend-mode: multiply;
+    }
+
+    pre#grid {
+      position: absolute;
+      inset: 0;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;             /* center ascii block */
+      align-items: center;       /* vertical center */
+      justify-content: center;   /* horizontal center */
+      font-size: var(--font-size);
+      line-height: 1;
+      white-space: pre;
+      color: #fff;
+      mix-blend-mode: screen;
+      opacity: 0.85;
+    }
+
+    #grid-content {
+      text-align: center; 
+    }
+
+    
+    .page-content {
+      position: relative;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+
+
+  <div id="grid-container">
+    <div id="grid-bg"></div>
+    <pre id="grid"><code id="grid-content"></code></pre>
+  </div>
+
+  <!-- Foreground content -->
+  <div class="page-content">
+    <nav class="p-6 flex gap-6 text-sm uppercase font-mono">
+      <a href="index.html" class="hover:underline">Home</a>
+      <a href="works.html" class="hover:underline">Works</a>
+      <a href="about.html" class="hover:underline">About</a>
+      <a href="blog.html" class="hover:underline">Blog</a>
+    </nav>
+
+    <section class="min-h-screen flex flex-col justify-center items-center text-center">
+      <h1 class="text-6xl tracking-tight">Pepe Sen</h1>
+      <p class="mt-4 text-lg italic text-center max-w-xs mx-auto font-mono">
+        digital media / photography / installations
+      </p>
+    </section>
+
+    <section class="p-10 grid gap-8 font-mono">
+      <h2 class="text-2xl">Works</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-neutral-900/80 p-4 rounded-xl shadow-xl">Project 1</div>
+        <div class="bg-neutral-900/80 p-4 rounded-xl shadow-xl">Project 2</div>
+        <div class="bg-neutral-900/80 p-4 rounded-xl shadow-xl">Project 3</div>
+      </div>
+    </section>
+
+    <footer class="p-6 text-center text-xs text-neutral-400 text-white">
+      © 2025 Pepe Sen (MPS)
+    </footer>
+  </div>
+
+  <script>
+    const CHAR_START = 33, CHAR_END = 126, CHAR_RANGE = CHAR_END - CHAR_START;
+
+    const grid = document.getElementById('grid');
+    const gridBg = document.getElementById('grid-bg');
+    const gridContent = document.getElementById('grid-content');
+
+    let cols = 0, rows = 0, total = 0;
+    let pixels = [];
+    let fontSizePx = parseInt(getComputedStyle(grid).fontSize, 10) || 8;
+
+    function updateSize() {
+      fontSizePx = parseInt(getComputedStyle(grid).fontSize, 10) || 8;
+      cols = Math.floor(window.innerWidth / fontSizePx);
+      rows = Math.floor(window.innerHeight / fontSizePx);
+      total = cols * rows;
+      pixels = new Array(total).fill(String.fromCharCode(CHAR_START));
+    }
+
+    function generate(time) {
+      const cx = Math.floor(cols / 2), cy = Math.floor(rows / 2);
+      const t = 100 + (time * 0.001);
+      for (let i = 0; i < total; i++) {
+        const x = i % cols, y = Math.floor(i / cols);
+        const v = ((Math.cos((x - cx) / 8.0) + Math.sin((y - cy) / 8.0) + t) * 16);
+        const charIndex = Math.abs(Math.floor(v)) % CHAR_RANGE;
+        pixels[i] = String.fromCharCode(CHAR_START + charIndex);
+      }
+    }
+
+    function render(time = performance.now()) {
+      generate(time);
+      let lines = [];
+      for (let r = 0; r < rows; r++) {
+        const offset = r * cols;
+        lines.push(pixels.slice(offset, offset + cols).join(''));
+      }
+      gridContent.textContent = lines.join('\n');
+      requestAnimationFrame(render);
+    }
+
+    window.addEventListener('resize', updateSize);
+    updateSize();
+    render();
+  </script>
 </body>
 </html>
