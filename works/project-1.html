@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project 1 – Your Name</title>
+  <title>Delay as Resistance - Pepe Sen</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-black text-white font-mono">
@@ -22,7 +22,9 @@
     <p class="text-sm text-neutral-400 mb-8">2025 — custom built textile instrument / mixed media</p>
 
     <!-- Main Image -->
+    <div id ="gallery">
     <img src="../images/temporalbeing-web.jpg" alt="Project Image" class="rounded-lg mb-8">
+  </div>
 <br>
     <!-- Description -->
     <p class="mb-12">
@@ -48,13 +50,83 @@
     </div>
 
     <!-- More Images -->
-    <div class="grid md:grid-cols-2 gap-6 mb-12">
-      <img src="../images/work1-detail1.jpg" class="rounded-lg">
-      <img src="../images/work1-detail2.jpg" class="rounded-lg">
+    <div id="gallery" class="grid md:grid-cols-2 gap-6 mb-12">
+      <img src="../images/edit-2-med.jpg" class="rounded-lg">
+      <video 
+    src="../images/videos/video5442868168521439602.mp4" 
+    class="rounded-lg cursor-zoom-in
+    muted
+    playsinline"
+    preload="metadata"
+  ></video>
+      
     </div>
 
     <!-- Navigation back -->
     <a href="../works.html" class="underline text-neutral-400 hover:text-white">← Back to Works</a>
+
+    <!-- Lightbox -->
+<div id="lbOverlay" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center hidden z-50">
+  <button id="lbClose" class="absolute top-4 right-4 text-white text-3xl">&times;</button>
+  <button id="lbPrev" class="absolute left-4 text-white text-3xl">&#10094;</button>
+  <img id="lbImg" class="max-h-[90%] max-w-[90%] rounded shadow-lg" src="" alt="">
+  <button id="lbNext" class="absolute right-4 text-white text-3xl">&#10095;</button>
+</div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const overlay  = document.getElementById('lbOverlay');
+    const imgEl    = document.getElementById('lbImg');
+    const closeBtn = document.getElementById('lbClose');
+    const prevBtn  = document.getElementById('lbPrev');
+    const nextBtn  = document.getElementById('lbNext');
+
+    // Get ALL images from both galleries
+    const images = Array.from(document.querySelectorAll('#gallery img'));
+    let currentIndex = -1;
+
+    function showImage(index) {
+      if (index < 0) index = images.length - 1;
+      if (index >= images.length) index = 0;
+      currentIndex = index;
+      imgEl.src = images[index].src;
+      imgEl.alt = images[index].alt || '';
+      overlay.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeLightbox() {
+      overlay.classList.add('hidden');
+      imgEl.src = '';
+      document.body.classList.remove('overflow-hidden');
+      currentIndex = -1;
+    }
+
+    // Open on click
+    images.forEach((img, idx) => {
+      img.addEventListener('click', () => showImage(idx));
+    });
+
+    // Controls
+    closeBtn.addEventListener('click', closeLightbox);
+    prevBtn.addEventListener('click', () => showImage(currentIndex - 1));
+    nextBtn.addEventListener('click', () => showImage(currentIndex + 1));
+
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (overlay.classList.contains('hidden')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+      if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+    });
+  });
+</script>
   </section>
+
+  
 </body>
 </html>
